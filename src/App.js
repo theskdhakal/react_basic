@@ -1,14 +1,19 @@
 import { useState } from "react";
 import "./App.css";
-import Title from "./Title"; //export default
-import { Footer } from "./Title"; //inline export
-import { Display } from "./display";
-import { Btns } from "./Btns";
+// import Title from "./Title"; //export default
+// import { Footer } from "./Title"; //inline export
+// import { Display } from "./display";
+// import { Btns } from "./Btns";
+// import { Form } from "./Form";
+
+import { Form } from "./challenge/Form";
+import { Display } from "./challenge/Display";
 
 const App = () => {
+  const [ddt, setDdt] = useState("");
   // let counter = 0;
 
-  const [counter, setCounter] = useState(0);
+  // const [counter, setCounter] = useState(0);
 
   // const increment = () => {
   //   setCounter(counter + 1);
@@ -26,36 +31,39 @@ const App = () => {
   //   setCounter(counter - counter);
   // };
 
-  const update = (operator) => {
-    console.log(operator);
+  // const update = (operator) => {
+  //   console.log(operator);
 
-    const fun = {
-      "+": () => setCounter(counter + 1),
-      "-": () => setCounter(counter - 1),
-      reset: () => setCounter(0),
-    };
+  //   const fun = {
+  //     "+": () => setCounter(counter + 1),
+  //     "-": () => setCounter(counter - 1),
+  //     reset: () => setCounter(0),
+  //   };
 
-    fun[operator]();
-    // //increment
-    // if (operator === "+") {
-    //   setCounter(counter + 1);
-    // }
+  //   fun[operator]();
+  // //increment
+  // if (operator === "+") {
+  //   setCounter(counter + 1);
+  // }
 
-    // if (operator === "-") {
-    //   setCounter(counter - 1);
-    // }
+  // if (operator === "-") {
+  //   setCounter(counter - 1);
+  // }
 
-    // if (operator === "reset") {
-    //   setCounter(0);
-    // }
-  };
+  // if (operator === "reset") {
+  //   setCounter(0);
+  // }
+
   return (
     <div className="App">
       {/* <Title /> */}
       {/* <Footer /> */}
-      <Display counter={counter} />
+      {/* <Display counter={counter} />
       <br />
-      <Btns update={update} />
+      <Btns update={update} /> */}
+
+      <Form setDdt={setDdt} />
+      <Display ddt={ddt} />
     </div>
   );
 };
